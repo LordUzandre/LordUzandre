@@ -12,11 +12,14 @@ void BaseCharacter::undoMovement()
 
 Rectangle BaseCharacter::getCollisionRec()
 {
-    return Rectangle{
-        getScreenPos().x,
-        getScreenPos().y,
-        width * scale,
-        height * scale};
+    return Rectangle{getScreenPos().x, getScreenPos().y+height*2, width * scale, height/2 * scale};
+    
+    // cmd+shift+7 to comment out
+    // return Rectangle{
+    //     getScreenPos().x,
+    //     getScreenPos().y,
+    //     width * scale,
+    //     height * scale};
 }
 
 void BaseCharacter::tick(float deltaTime)
